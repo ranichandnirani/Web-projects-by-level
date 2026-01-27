@@ -7,27 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="stats-container">
-            <div class="details">
-                <h1>ToDo App</h1>
-                <p>Keeo it up!</p>
-                <div id="progressBar">
-                    <div id="progress"></div>
-                </div>
-            </div>
-            <div class="stats-numbers">
-                <p id="numbers">2 / 3<p/>
-            </div>
+    <div class="todo-container">
+        <h1>ToDo List
+            <img src="checklist.png" alt="checklist">
+        </h1>
+        <div class="input">
+            <input type="text" id="input-field" placeholder="Add your tasks">
+            <button class="btn">Add Task</button>
         </div>
-
-       <form action="">
-        <input type="text" placeholder="Write Your Task">
-        <button type="submit">+</button>
-       </form>
-       
-       <ul class="task-list"></ul>
+        <ul class="list-item">
+            <!-- <li class= "checked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li> -->
+        </ul>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
