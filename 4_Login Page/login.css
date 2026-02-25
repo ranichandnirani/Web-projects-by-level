@@ -56,3 +56,47 @@ body {
 .container.action .form-box {
     right: 50%;
 }
+
+.container.action .form-box.register {
+    visibility: visible;
+}
+
+.form-box.register {
+    visibility: hidden;
+}
+
+form {
+    width: 100%;
+    margin: -10px 0;
+}
+
+.container h1 {
+    font-size: 36px;
+    margin: -10px 0;
+}
+
+.input-box {
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: #eee;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.input-box input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.input-box input:focus {
+    outline: 2px solid #7494ec;
+}
