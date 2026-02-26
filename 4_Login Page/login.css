@@ -99,4 +99,49 @@ form {
 
 .input-box input:focus {
     outline: 2px solid #7494ec;
+    box-shadow: 0 0 5px rgba(116, 148, 216, 0.5);
+    transition: .1s;
+}
+
+.input-box i {
+    color: #888;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.forgot-link {
+    margin: -15px 0 15px;
+}
+
+.forgot-link a {
+    font-size: 14.5px;
+    color: #333;
+    text-decoration: none;
+
+}
+
+.btn {
+    width: 100%;
+    height: 48px;
+    background: purple;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.container p {
+    font-size: 14.5px;
+    margin: 15px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
 }
