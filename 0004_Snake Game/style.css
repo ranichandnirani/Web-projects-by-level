@@ -55,7 +55,7 @@ section {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: rgb(9, 9, 75);
+    /* background-color: rgb(9, 9, 75); */
     gap: var(--space-lg);
 }
 
@@ -67,11 +67,21 @@ section .infos {
 
 .info {
     padding: var(--space-sm) var(--space-md);
-    border: 2px solid var(--border-primary-color);
+    border: 1px solid var(--border-primary-color);
     border-radius: var(--border-radius-sm);
 }
 
 .board {
     border: 1px solid var(--border-primary-color);
-     flex-grow: 1;  /*decides how much a flex item expands when there is extra space in the flex container.*/
+    flex-grow: 1;  /*decides how much a flex item expands when there is extra space in the flex container.*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    /* flex-wrap: wrap; */
+}
+
+.block {
+    /* height: 30px;
+    width: 30px; */
+    border: 1px solid var(--border-primary-color);
 }
