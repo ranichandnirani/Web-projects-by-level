@@ -75,8 +75,8 @@ section .infos {
     border: 1px solid var(--border-primary-color);
     flex-grow: 1;  /*decides how much a flex item expands when there is extra space in the flex container.*/
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
     /* flex-wrap: wrap; */
 }
 
