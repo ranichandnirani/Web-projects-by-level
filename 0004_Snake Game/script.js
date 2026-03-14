@@ -1,11 +1,17 @@
 // for selecting board
 
-const board = document.querySelector('.board');
+const board = document.querySelector(".board");
+const startButton = document.querySelector(".btn-start");
+const modal = document.querySelector(".modal");
+const startGameModal = document.querySelector(".game-start");
+const gameOverModal = document.querySelector(".game-over");
+
 const blockHeight = 50
 const blockWidth = 50
 
 const cols = Math.floor(board.clientWidth / blockWidth);
 const rows = Math.floor(board.clientHeight / blockHeight);
+
 let intervalId = null;
 let food = {r:Math.floor(Math.random()* rows), c:Math.floor(Math.random()*cols)}
 
@@ -50,8 +56,12 @@ function render(){
 
     // game over alert
     if(head.r < 0 || head.r > rows || head.c < 0 || head.c >cols) {
-        alert("Game Over");
+        // alert("Game Over");
         clearInterval(intervalId);
+
+        modal.style.display = "flex";
+        
+        return;
     }
 
     // food
@@ -59,6 +69,9 @@ function render(){
         blocks[`${food.r}-${food.c}`].classList.remove("food");
         food = {r:Math.floor(Math.random()* rows), c:Math.floor(Math.random()*cols)}
         blocks[`${food.r}-${food.c}`].classList.add("food");
+
+        // for increasing tail after eating food
+        snake.unshift(head);
     }
 
     snake.forEach(segment => {
@@ -84,6 +97,15 @@ intervalId = setInterval(() => {
 
 }, 400);
 
+startButton.addEventListener("click", () =>{
+    // modal.Style.display = "none";
+    modal.remove();
+    intervalId = setInterval(()=> {render()}, 300);
+});
+
+function restarGame() {
+
+}
 // ArrowUp
 // ArrowRight
 // ArrowLeft
