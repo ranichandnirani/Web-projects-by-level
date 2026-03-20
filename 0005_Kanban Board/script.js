@@ -42,3 +42,40 @@ function addDragEventsOnColumn(column) {
 addDragEventsOnColumn(todo);
 addDragEventsOnColumn(progress);
 addDragEventsOnColumn(done);
+
+// modal logic
+
+const toggleModalButton = document.querySelector("#toggle-modal");
+const modalBg = document.querySelector(".modal .bg");
+const modal = document.querySelector(".modal");
+const addTaskButton = document.querySelector("#add-new-task");
+
+toggleModalButton.addEventListener("click", () => {
+    modal.classList.toggle("active")
+});
+
+modalBg.addEventListener("click", ()=> {
+    modal.classList.remove("active");
+});
+
+addTaskButton.addEventListener("click",() => {
+    const taskTitle = document.querySelector("#task-title-input").value;
+    const taskDisc = document.querySelector("#task-disc-input").value;
+
+    const div = document.querySelector("div");
+
+    div.classList.add("task");
+    div.setAttribute("draggable", "true");
+
+    div.innerHTML = `<h2>${taskTitle}</h2>
+                    <p>${taskDisc}</p>
+                    <button>Delete</button>
+                    `
+
+                todo.appendChild(div);
+                div.addEventListener("drag", (e) => {
+                    dragElement = div;
+                });
+
+                modal.classList.remove("active");
+});
