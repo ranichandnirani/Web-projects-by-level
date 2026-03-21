@@ -3,7 +3,7 @@ const progress = document.querySelector("#progress");
 const done = document.querySelector("#done");
 let dragElement = null;
 
-console.log(todo, progress, done);
+// console.log(todo, progress, done);
 
 const tasks = document.querySelectorAll(".task");
 
@@ -35,7 +35,15 @@ function addDragEventsOnColumn(column) {
         console.log("dropped", dragElement, column)
 
         column.appendChild(dragElement);
-        column.classList.remove(hover-over);
+        column.classList.remove("hover-over");
+
+
+        [ todo, progress, done ].forEach(col => {
+            const tasks = col.querySelectorAll(".task");
+            const count = col.querySelector(".right");
+
+            count.innerText = tasks.length;
+        });
     });
 }
     
@@ -54,28 +62,28 @@ toggleModalButton.addEventListener("click", () => {
     modal.classList.toggle("active")
 });
 
-modalBg.addEventListener("click", ()=> {
+modalBg.addEventListener("click", () => {
     modal.classList.remove("active");
 });
 
-addTaskButton.addEventListener("click",() => {
-    const taskTitle = document.querySelector("#task-title-input").value;
-    const taskDisc = document.querySelector("#task-disc-input").value;
+addTaskButton.addEventListener("click", () => {
+    const taskTitle = document.querySelector("#task-title-input").value
+    const taskDisc = document.querySelector("#task-disc-input").value
 
-    const div = document.querySelector("div");
+    const div = document.createElement("div");
 
     div.classList.add("task");
     div.setAttribute("draggable", "true");
 
-    div.innerHTML = `<h2>${taskTitle}</h2>
-                    <p>${taskDisc}</p>
-                    <button>Delete</button>
-                    `
+    div.innerHTML = `
+        <h2>${taskTitle}</h2>
+        <p>${taskDisc}</p>
+        <button>Delete</button>
+    `
+    todo.appendChild(div);
+    div.addEventListener("drag", (e) => {
+        dragElement = div;
+    });
 
-                todo.appendChild(div);
-                div.addEventListener("drag", (e) => {
-                    dragElement = div;
-                });
-
-                modal.classList.remove("active");
+    modal.classList.remove("active");
 });
