@@ -15,6 +15,7 @@
     --hint-yellow: #fcf1cc;
     --pure-white: #fff;
     --bg-ham-color: #003324;
+    --bg-icon-color: #095f45;
 }
 
 body {
@@ -27,7 +28,9 @@ a {
     text-decoration: none;
     color: var(--pure-white);
 }
-
+a:hover {
+    color: var(--bg-hover);
+}
 .logo img {
     width: 90px;
 } 
@@ -35,6 +38,7 @@ a {
 .flex {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 li {
@@ -70,6 +74,7 @@ li {
     max-height: 14vh;
     background-color: #262525;
     padding: 1rem;
+    flex-wrap: nowrap;
     /* position: fixed;
     top: 0;
     left: 0;
@@ -90,6 +95,7 @@ li {
 
 .btn:hover {
     background: var(--bg-hover);
+    color: var(--pure-white);
 }
 
 .cart-icon {
@@ -129,6 +135,7 @@ li {
 .container, 
 .image-container {
     flex: 1;
+    flex-basis: 300px;
 }
 
 h1 {
@@ -141,19 +148,43 @@ h1 span {
     color: #fcf1cc;
 }
 
-p {
-    font-size: 1.25rem;
-    color: var(--hint-yellow);
+.container div {
     margin-left: 40px;
 }
 
-.container div {
+p {
+    font-size: 1.25rem;
+    color: var(--hint-yellow);
+    line-height: 1.8rem;
+    font-weight: 400;
     margin-left: 40px;
+}
+.para {
+    margin-block: 2rem;
+    max-width: 550px;
 }
 
 .container .btn {
     margin-top: 10px;
     border-radius: 20px;
+}
+
+.social-icon {
+    background: var(--hint-yellow);
+    color: var(--lead);
+    box-shadow: 2px 4px 3px rgba(115, 106, 102, 0.9);
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+    transition: .3s ease-in-out;
+}
+
+.social-icon:hover {
+    background: var(--bg-icon-color);
+    color: var(--hint-yellow);
 }
 /* Footer styling */
 
@@ -161,6 +192,7 @@ p {
 
 @media  screen and (max-width: 780px) {
     
+    /* header */
     .navlist, .desc-action .btn {
         display: none;
     }
@@ -170,7 +202,7 @@ p {
     }
 
     .mobile-desc-menu {
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -185,7 +217,7 @@ p {
         border: .1rem solid var(--gold-finger);
         border-radius: 1rem;
         box-shadow: 8px 8px 8px rgba(255, 81, 6, 0.7);
-        transition: .6s ease-in-out all;
+        transition: all .5s ease-in-out all;
     }
 
     .mobile-desc-menu {
@@ -193,4 +225,21 @@ p {
         transform: translateX(-50%);
     }
 
+    /* section */
+
+    h1 {
+        font-size: 3.6rem;
+    }
+
+    .container {
+        padding-top: 3rem;
+    }
+
+    .gap-2 {
+        gap: 1.4rem;
+    }
+
+    .gap-4 {
+        gap: 4rem;
+    }
 }
