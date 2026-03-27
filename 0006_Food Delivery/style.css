@@ -68,6 +68,19 @@ li {
     height: auto;
     display: block;
 }
+
+.service {
+    background: var(--bg-icon-color);
+}
+.p-top {
+    padding-top: 5rem;
+}
+
+.text-center {
+    text-align: center;
+    
+}
+
 /* Header styling */
 
 .navbar {
@@ -165,7 +178,7 @@ p {
 }
 
 .container .btn {
-    margin-top: 10px;
+    margin: 10px;
     border-radius: 20px;
 }
 
