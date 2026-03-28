@@ -10,12 +10,14 @@
 :root {
     --lead: #212121;
     --gold-finger: #ff5106;
-    --bg-hover: rgb(255, 125, 3);
+    --bg-hover: #ff7d03;
     --eye-ball: #fffdf7;
     --hint-yellow: #fcf1cc;
     --pure-white: #fff;
     --bg-ham-color: #003324;
     --bg-icon-color: #095f45;
+    --sb-h-color: #FFD700;
+    --p-color: #F5F0E8;
 }
 
 body {
@@ -80,7 +82,30 @@ li {
     text-align: center;
     
 }
+/* Section1 */
 
+h5 {
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: var(--gold-finger);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 3.7rem;
+    text-transform: capitalize;
+    color: var(--hint-yellow);
+}
+
+h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--gold-finger);
+}
+
+.p {
+    color: var(--p-color);
+}
 /* Header styling */
 
 .navbar {
@@ -146,7 +171,8 @@ li {
 }
 
 .container, 
-.image-container {
+.image-container,
+.service-card {
     flex: 1;
     flex-basis: 300px;
 }
