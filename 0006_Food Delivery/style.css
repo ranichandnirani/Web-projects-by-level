@@ -14,14 +14,20 @@
     --eye-ball: #fffdf7;
     --hint-yellow: #fcf1cc;
     --pure-white: #fff;
-    --bg-ham-color: #003324;
+    --bg-ham-color: hsl(162, 100%, 10%);
     --bg-icon-color: #095f45;
     --sb-h-color: #FFD700;
     --p-color: #F5F0E8;
+    /* section */
+    --bg-s1-color: #0f3a2c;
+    --bg-s2-color: #1a4335;
+
+    /* Product card color */
+    --bg-pc-color: #0f3a2c;
 }
 
 body {
-    background-color: var(--eye-ball);
+    background-color: var(--bg-s1-color);
 }
 
 /* Basic styling */
@@ -71,9 +77,6 @@ li {
     display: block;
 }
 
-.service {
-    background: var(--bg-icon-color);
-}
 .p-top {
     padding-top: 5rem;
 }
@@ -82,29 +85,9 @@ li {
     text-align: center;
     
 }
-/* Section1 */
 
-h5 {
-    font-size: 1.5rem;
-    letter-spacing: .1rem;
-    color: var(--gold-finger);
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 3.7rem;
-    text-transform: capitalize;
-    color: var(--hint-yellow);
-}
-
-h3 {
-    font-size: 2rem;
-    text-transform: capitalize;
-    color: var(--gold-finger);
-}
-
-.p {
-    color: var(--p-color);
+.mt-4 {
+    margin-top: 4rem;
 }
 /* Header styling */
 
@@ -113,12 +96,6 @@ h3 {
     background-color: #262525;
     padding: 1rem;
     flex-wrap: nowrap;
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; */
-    /* border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem; */
 }
 
 .btn {
@@ -225,6 +202,74 @@ p {
     background: var(--bg-icon-color);
     color: var(--hint-yellow);
 }
+
+/* Section1 */
+
+.service {
+    background: var(--bg-s1-color);
+    margin-bottom: 5rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: var(--gold-finger);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 3.7rem;
+    text-transform: capitalize;
+    color: var(--hint-yellow);
+}
+
+h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--gold-finger);
+}
+
+.p {
+    color: var(--p-color);
+}
+
+.service-card h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+/* Section 1 end */
+
+/* Section 2 start*/
+
+.menu {
+    background: var(--bg-s2-color);
+    
+}
+
+.order-card {
+    flex: 1;
+    flex-basis: 300px;
+    padding: 0 1rem 2rem 1rem;
+    background: var(--bg-pc-color);
+    border: .1rem solid var(--gold-finger);
+    border-radius: 2rem;
+    box-shadow: 8px 8px 8px rgba(180, 178, 178, 0.7);
+}
+
+.order-card img{
+    width: 15rem;
+    border-radius: 2.3rem;
+    padding: 1.5rem;
+    
+}
+
+h4 {
+    font-size: 1.8rem;
+    color: var(--hint-yellow);
+    padding: 1.3rem 0 2rem 0;
+}
+/* Section 2 end*/
+
 /* Footer styling */
 
 /* Media query */
@@ -266,6 +311,7 @@ p {
 
     /* section */
 
+    /* Hero sectoin */
     h1 {
         font-size: 3.6rem;
     }
@@ -280,5 +326,10 @@ p {
 
     .gap-4 {
         gap: 4rem;
+    }
+
+    /* Section 1 */
+    h2 {
+        font-size: 3rem;
     }
 }
