@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="shortcut icon" href="Images/rest-logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroma Avenue</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="style.css">
+
+    <script src="main.js"></script>
 </head>
+
 <body>
     <!-- Header start-->
     <header>
-        
+
         <nav class="navbar flex between wrapper">
             <div class="logo">
                 <img src="Images/rest-logo.png" alt="logo">
@@ -50,8 +58,8 @@
                 <li><a href="#">Contact us</a></li>
                 <li>
                     <a href="#" class="btn">Sign in
-                    &nbsp;
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        &nbsp;
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     </a>
                 </li>
             </ul>
@@ -132,7 +140,7 @@
                     <h2>The Most Popular</h2>
                 </div>
 
-                <div class="card-list text-center flex mt-4 gap-2">
+                <!-- <div class="card-list text-center flex mt-4 gap-2">
                     <div class="order-card">
                         <div class="card-image">
                             <img src="Images/img-1.jpg" alt="">
@@ -140,6 +148,46 @@
                         <h4>Beef Burger</h4>
                         <h4 class="price">$200</h4>
                         <a href="#" class="btn">Add to cart</a>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <section>
+            <div class="wrapper p-top flex gap-3">
+                <div class="image-container">
+                    <img src="Images/delivery-boy-with-phone.png" alt="">
+                </div>
+
+                <div class="container">
+                    <h5>Our Reviews</h5>
+                    <h2>What they say?</h2>
+
+                    <div class="review-container">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="flex gap-2">
+                                        <div class="profile">
+                                            <img src="Images/profile1.jpeg" alt="">
+                                        </div>
+                                        <div>
+                                            <h4>John Doe</h4>
+                                            <div mt-half>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Aroma Avenue is the best. Besides the many deliciaus meals, the service is also good, espacially very fast delivery. I highly recommend Aroma Avenue to you</p>
+                                </div>        
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,5 +200,7 @@
 
     </footer>
     <!-- Footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
+
 </html>
