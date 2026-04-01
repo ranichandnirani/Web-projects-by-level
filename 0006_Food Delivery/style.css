@@ -27,6 +27,7 @@
 
     /* For profile */
     --bg-pro-color: #758f6d;
+    --pro-h4-color: #ffa56a;
 }
 
 body {
@@ -171,11 +172,11 @@ h1 span {
     color: #fcf1cc;
 }
 
-.container div {
+.hero-section .container div {
     margin-left: 40px;
 }
 
-p {
+.hero-section p {
     font-size: 1.25rem;
     color: var(--hint-yellow);
     line-height: 1.8rem;
@@ -188,7 +189,7 @@ p {
 }
 
 .container .btn {
-    margin: 10px;
+    margin-left: 10px;
     border-radius: 20px;
 }
 
@@ -236,7 +237,7 @@ h3 {
     color: var(--gold-finger);
 }
 
-.p {
+p {
     color: var(--p-color);
 }
 
@@ -278,8 +279,11 @@ h4 {
 /* Section 2 end*/
 
 /* Section 3 start */
-/* .review-container {
-    background: var(--bg-pro-color);
+.review-container {
+    /* background: var(--bg-pro-color); */
+    width: 650px;
+    max-width: 100%;
+    flex: 1;
 }
 
 .swiper {
@@ -290,6 +294,7 @@ h4 {
 .swiper-slide {
     padding-left: 0;
 }
+
 .profile {
     width: 4rem;
     aspect-ratio: 1;
@@ -298,56 +303,10 @@ h4 {
     padding-left: 0;
 }
 
-.profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.fa-star {
-    color: #FFD700;
-} */
-
-/* Fix swiper default spacing */
-
-.swiper .wrapper{
-    width: 100%;
-    overflow: hidden; 
-}
-
-.swiper-wrapper {
-    padding-left: 0 !important;
-}
-
-.swiper-slide {
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-
-/* Make review card look like the target */
-.review-container {
-    background: var(--bg-pro-color);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    overflow: hidden;
-}
-
-.swiper-slide .flex {
-    align-items: center;
-    /* display: flex; */
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 1rem; /* gap-2 in tailwind = 0.5rem, adjust as needed */
-    margin-bottom: 0.8rem;
-}
-
-.profile {
-    width: 4rem;
-    aspect-ratio: 1;
-    border-radius: 100vw;
-    overflow: hidden;
-    flex-shrink: 0; /* prevent image from shrinking */
+.container h4 {
+    font-size: 1.8rem;
+    color: var(--pro-h4-color);
+    padding: 1.3rem 0 2rem 0;
 }
 
 .profile img {
@@ -357,15 +316,11 @@ h4 {
     border-radius: 50%;
 }
 
-.swiper-slide p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
 
 .fa-star {
-    color: #FFD700;
+    color: var(--sb-h-color);
 }
+
 /* Section 3 end */
 /* Footer styling */
 
