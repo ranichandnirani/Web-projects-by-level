@@ -96,7 +96,10 @@ li {
 
 .mt-half {
     margin-top: .5rem;
+    margin-top: 0;  /* remove top margin */
+    padding-top: 0;
 }
+
 /* Header styling */
 
 .navbar {
@@ -306,7 +309,14 @@ h4 {
 .container h4 {
     font-size: 1.8rem;
     color: var(--pro-h4-color);
-    padding: 1.3rem 0 2rem 0;
+    /* padding: 1.3rem 0 2rem 0; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.container {
+    width: 50%;
+    padding-left: 1rem;
 }
 
 .profile img {
@@ -316,9 +326,33 @@ h4 {
     border-radius: 50%;
 }
 
+.wrapper.flex {
+    display: flex;
+    flex-direction: row;  /* side by side */
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;        /* add padding */
+    overflow: hidden;
+}  
 
 .fa-star {
     color: var(--sb-h-color);
+}
+
+.arrow {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--hint-yellow);
+    color: var(--lead);
+    line-height: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background: var(--bg-icon-color);
+    color: var(--hint-yellow);
 }
 
 /* Section 3 end */
