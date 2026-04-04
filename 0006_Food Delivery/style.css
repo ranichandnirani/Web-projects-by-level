@@ -21,6 +21,7 @@
     /* section */
     --bg-s1-color: #0f3a2c;
     --bg-s2-color: #1a4335;
+    --bg-s4-color: #7a966e;
 
     /* Product card color */
     --bg-pc-color: #0f3a2c;
@@ -356,6 +357,32 @@ h4 {
 }
 
 /* Section 3 end */
+
+/* Section 4 start */
+
+.app-container {
+    background: var(--bg-s4-color);
+    padding: 3rem 4rem;
+    border-radius: 3rem;
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.app-container img {
+    width: 25rem;
+}
+
+.app-container h2 {
+    font-size: 4.5rem;
+    color: var(--bg-pc-color);
+}
+
+.app-container h5 {
+    color: var(--sb-h-color);
+}
+/* Section 4 end */
 /* Footer styling */
 
 /* Media query */
