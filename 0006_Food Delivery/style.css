@@ -101,6 +101,9 @@ li {
     padding-top: 0;
 }
 
+.m-auto {
+    margin: auto;
+}
 /* Header styling */
 
 .navbar {
@@ -370,11 +373,12 @@ h4 {
     gap: 4rem;
 }
 
-.app-container img {
+
+.app-container .image-container img {
     width: 25rem;
 }
 
-.app-container h2 {
+.app-container .content h2 {
     font-size: 4.5rem;
     color: var(--bg-pc-color);
 }
@@ -382,6 +386,7 @@ h4 {
 .app-container h5 {
     color: var(--sb-h-color);
 }
+
 /* Section 4 end */
 /* Footer styling */
 
@@ -444,5 +449,14 @@ h4 {
     /* Section 1 */
     h2 {
         font-size: 3rem;
+    }
+
+    /* Section 4 */
+    .app-container {
+        padding: 2.2rem;
+    }
+
+    .app-container .content h2 {
+        font-size: 3.5rem;
     }
 }
