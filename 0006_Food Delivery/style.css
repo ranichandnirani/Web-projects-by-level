@@ -134,6 +134,9 @@ li {
     position: relative;
 }
 
+.cart-icon:hover {
+    color: var(--pure-white);
+}
 .cart-icon .cart-value {
     position: absolute;
     top: 50%;
@@ -388,6 +391,31 @@ h4 {
 }
 
 /* Section 4 end */
+
+/* Section 5 start */
+.input-container {
+    width: 43rem;
+    max-width: 100%;
+    background: var(--hint-yellow);
+    padding: .8rem;
+    box-shadow: 0 5px 8px rgba(232, 229, 229, 0.3);
+    border-radius: 1rem;
+}
+
+input[type="email"] {
+    flex: 1;
+    height: 6vh;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    padding-left: 1rem;
+}
+
+input[type="email"]:focus {
+    outline: none;
+}
+/* Section 5 end */
+
 /* Footer styling */
 
 /* Media query */
@@ -458,5 +486,11 @@ h4 {
 
     .app-container .content h2 {
         font-size: 3.5rem;
+    }
+
+    /* Section 5 */
+    .input-container {
+        width: 90%;
+        margin: 0 auto;
     }
 }
