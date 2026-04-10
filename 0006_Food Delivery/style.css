@@ -14,15 +14,15 @@
     --eye-ball: #fffdf7;
     --hint-yellow: #fcf1cc;
     --pure-white: #fff;
-    --bg-ham-color: hsl(162, 100%, 10%);
+    --bg-ham-color: #003324;
     --bg-icon-color: #095f45;
     --sb-h-color: #FFD700;
     --p-color: #F5F0E8;
     /* section */
-    --bg-s1-color: #0f3a2c;
-    --bg-s2-color: #1a4335;
+    --bg-s1-color: #003d2b;
+    --bg-s2-color: #00422f;
     --bg-s4-color: #7a966e;
-
+    --bg-footer-color: #1a4335;
     /* Product card color */
     --bg-pc-color: #0f3a2c;
 
@@ -103,6 +103,10 @@ li {
 
 .m-auto {
     margin: auto;
+}
+
+.mt-one-half {
+    margin-top: 1.5rem;
 }
 /* Header styling */
 
@@ -398,10 +402,14 @@ h4 {
     max-width: 100%;
     background: var(--hint-yellow);
     padding: .8rem;
-    box-shadow: 0 5px 8px rgba(232, 229, 229, 0.3);
+    box-shadow: 0 5px 8px rgba(232, 229, 229, 0.2);
     border-radius: 1rem;
+    margin: 4rem auto auto;
 }
 
+.input-container:hover {
+    background: var(--bg-pc-color);
+}
 input[type="email"] {
     flex: 1;
     height: 6vh;
@@ -411,12 +419,30 @@ input[type="email"] {
     padding-left: 1rem;
 }
 
+input[type="email"]:hover {
+    color: var(--eye-ball);
+}
+
 input[type="email"]:focus {
     outline: none;
 }
 /* Section 5 end */
 
-/* Footer styling */
+/* Footer styling start*/
+.footer-container {
+    margin-top: 10rem;
+    padding-block: 4rem;
+    background: var(--hint-yellow);
+}
+
+.footer-container p {
+    color: black;
+}
+
+.footer-wrapper {
+    flex: 1;
+}
+/* Footer styling end*/
 
 /* Media query */
 
