@@ -2,6 +2,10 @@
 
 Aroma Avenue is a responsive food delivery front-end project built with HTML, CSS, and JavaScript. It includes a modern landing page, product menu section, interactive cart, customer reviews slider, mobile navigation, and a separate sign-in page.
 
+## Live Demo
+
+https://aromaavenue.vercel.app
+
 ## Preview
 
 This project is designed as a restaurant and food delivery website UI with:
@@ -117,7 +121,3 @@ For best results, use a live server extension in VS Code because the project loa
 ## Author
 
 Created by Chandni.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
