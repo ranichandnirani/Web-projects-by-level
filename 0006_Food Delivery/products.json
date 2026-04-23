@@ -9,7 +9,7 @@
         "id": 2,
         "name": "Veggie Pizza",
         "price": "$10.99",
-        "image": "images/pizz.png"
+        "image": "images/pizza.png"
     },
     {
         "id": 3,
@@ -39,7 +39,7 @@
         "id": 7,
         "name": "Itallian Spaghetti",
         "price": "$7.65",
-        "image": "images/spaghatti.png"
+        "image": "images/spaghetti.png"
     },
     {
         "id": 8,
