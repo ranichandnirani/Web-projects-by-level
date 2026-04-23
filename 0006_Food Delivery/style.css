@@ -7,6 +7,10 @@
     font-family: "Roboto Condensed", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --lead: #212121;
     --gold-finger: #f2BD12;
@@ -14,21 +18,6 @@
     --eye-ball: #fffdf7;
     --hint-yellow: #fcf1cc;
     --pure-white: #fff;
-    /* --bg-ham-color: #003324;
-    --bg-icon-color: #095f45;
-    --sb-h-color: #FFD700;
-    --p-color: #F5F0E8;
-    /* section */
-    /* --bg-s1-color: #003d2b;
-    --bg-s2-color: #00422f;
-    --bg-s4-color: #7a966e;
-    --bg-footer-color: #1a4335; */
-    /* Product card color */
-    /* --bg-pc-color: #0f3a2c; */
-
-    /* For profile */
-    /* --bg-pro-color: #758f6d;
-    --pro-h4-color: #ffa56a; */ 
 }
 
 body {
@@ -54,6 +43,7 @@ a {
 li {
    list-style: none; 
 }
+
 
 .between {
     justify-content: space-between;
@@ -330,6 +320,15 @@ h4 {
     align-items: center;
     gap: 1rem;
     padding: .7rem 1rem;
+    transition: all .5s ease-in-out;
+}
+ 
+.item.slide-out {
+    transform: translateX(50%);
+}
+
+.detail {
+    flex: 2;
 }
 
 .cart-list .item:nth-child(even) {
