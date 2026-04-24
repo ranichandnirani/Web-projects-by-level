@@ -462,7 +462,7 @@ input[type="email"] {
 }
 
 input[type="email"]:hover {
-    color: var(--eye-ball);
+    color: var(--lead);
 }
 
 input[type="email"]:focus {
