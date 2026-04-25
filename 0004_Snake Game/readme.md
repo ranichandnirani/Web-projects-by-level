@@ -5,7 +5,7 @@ A browser-based Snake Game built with HTML, CSS, and JavaScript. The player cont
 The game includes a start screen, game over state, score tracking, a running timer, and high score persistence using `localStorage`.
 
 # Live Demo
-http://ssnakegame.vercel.app
+https://ssnakegame.vercel.app
 
 ## Features
 
@@ -80,5 +80,5 @@ This project is useful for practicing:
 - Add sound effects and pause functionality
 
 ## Author
-
+Chandni Rani
 Created as part of a web development practice project collection.
