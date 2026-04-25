@@ -4,6 +4,9 @@ A simple Kanban Board project built with HTML, CSS, and JavaScript. It helps use
 
 The board supports adding new tasks through a modal, moving tasks between columns with drag and drop, deleting tasks, and saving task data in `localStorage` so progress remains available after refresh.
 
+# Live Demo
+https://kkanbanboard.vercel.app
+
 ## Features
 
 - Create new tasks with a title and description
