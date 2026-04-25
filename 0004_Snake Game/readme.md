@@ -4,6 +4,9 @@ A browser-based Snake Game built with HTML, CSS, and JavaScript. The player cont
 
 The game includes a start screen, game over state, score tracking, a running timer, and high score persistence using `localStorage`.
 
+# Live Demo
+ssnakegame.vercel.app
+
 ## Features
 
 - Classic snake gameplay
