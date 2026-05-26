@@ -7,9 +7,11 @@ const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
 
 // Modal function
 const modalCloseFunc = function () {
-    modal.classList.add('close');
+    modal.classList.add('closed');
 }
 
 // modal event listeners
 modalCloseOverlay.addEventListener('click', modalCloseFunc);
 modalCloseBtn.addEventListener('click', modalCloseFunc);
+
+// Notification toast

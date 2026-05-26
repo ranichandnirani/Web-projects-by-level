@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/favicon.jpg">
@@ -9,18 +10,20 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
     <div class="overlay" data-overlay></div>
 
     <!-- Modal -->
-     <div class="modal" data-modal>
+    <div class="modal closed" data-modal>
         <div class="modal-close-overlay" data-modal-overlay></div>
 
         <div class="modal-content">
-            <button class="modal-close-btn" data-modal-close> ✕
+            <button class="modal-close-btn" data-modal-close>
                 <ion-icon name="close-outline"></ion-icon>
             </button>
 
@@ -33,7 +36,8 @@
                     <div class="newsletter-header">
                         <h3 class="newsletter-title">Subscribe Newsletter.</h3>
                         <p class="newsletter-desc">
-                            Subscribe to the <b>Trendova</b> mailing list to receive updates on new arrivals, special offers and other discount information.
+                            Subscribe to the <b>Trendova</b> mailing list to receive updates on new arrivals, special
+                            offers and other discount information.
                         </p>
                     </div>
 
@@ -42,12 +46,30 @@
                 </form>
             </div>
         </div>
-     </div>
+    </div>
 
-
+    <!-- Notification toast -->
+    <div class="notification-toast" data-toast>
+        <button class="toast-close-btn" data-toast-close>
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <div class="toast-banner">
+            <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+        </div>
+        <div class="toast-details">
+            <p class="toast-message">
+                Someone in new just bought
+            </p>
+            <p class="toast-title">Rose Gold Earrings</p>
+            <p class="toast-meta">
+                <time datetime="PT2M">2 minutes</time> ago    
+            </p>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.ems.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
