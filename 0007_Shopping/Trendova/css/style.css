@@ -265,6 +265,7 @@ body::-webkit-scrollbar-thumb:hover {
     position: fixed;
     bottom: 80px;
     left: 20px;
+    right: 20px;
     background: var(--white);
     max-width: 300px;
     display: flex;
@@ -274,7 +275,7 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: var(--border-redius-md);
     box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
     transform: translateX(calc(-100% - 40px));
-    transition: 0,5s ease-in-out;
+    transition: 0.5s ease-in-out;
     z-index: 5;
     animation: slideOut 10s ease-in-out infinite;
 }
@@ -296,7 +297,7 @@ body::-webkit-scrollbar-thumb:hover {
     }
 }
 
-.notification-toast-closed {
+.notification-toast.closed {
     display: none;
 }
 
@@ -346,3 +347,4 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: var(--fs-10);
     color: var(--sonic-silver);
 }
+
