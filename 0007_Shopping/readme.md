@@ -104,7 +104,4 @@ This project is open-source and available under the MIT License.
 
 ## 👩‍💻 Author
 
-Made with ❤️ by [Chandni Rani](https://github.com/ranichandnirani?utm_source=chatgpt.com)
-
-Project Repository:
-[Trendova GitHub Repository](https://github.com/ranichandnirani/Web-projects-by-level/tree/main/0007_Shopping/Trendova?utm_source=chatgpt.com)
+Made with ❤️ by Chandni Rani
