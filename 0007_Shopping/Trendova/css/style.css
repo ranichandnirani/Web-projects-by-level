@@ -107,6 +107,16 @@ body::-webkit-scrollbar-thumb:hover {
     background: hsl(0, 0%, 70%);
 }
 
+/* reused style */
+
+.container {
+    padding: 0 15px;
+}
+
+/* main */
+
+
+
 /* overlay */
 
 .overlay {
@@ -348,3 +358,44 @@ body::-webkit-scrollbar-thumb:hover {
     color: var(--sonic-silver);
 }
 
+/* header */
+
+.header-top,
+.header-user-action,
+.desctop-navigation-menu {
+    display: none;
+}
+
+.header-main {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cultured);
+}
+
+.header-logo {
+    margin-bottom: 20px;
+}
+
+.header-logo img {
+    margin: auto;
+}
+
+.header-search-container {
+    position: relative;
+}
+
+.header-search-container .search-field {
+    font-size: var(--fs-7);
+    color: var(--onyx);
+    padding: 10px 15px;
+    padding-right: 50px;
+    border: 1px solid var(--cultured);
+    border-radius: var(--border-redius-md);
+}
+
+.search-field::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-btn {
+    background: var(--white);
+}
