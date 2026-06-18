@@ -12,13 +12,13 @@ A curated collection of frontend web projects built with **HTML**, **CSS**, and 
 
 | # | Project | Description | Level |
 |---|---------|-------------|-------|
-| 01 | [To-Do List](./0001_To-Do%20List) | Task manager with add, complete, and delete functionality | Beginner |
-| 02 | [Quiz App](./0002_Quiz-App) | Interactive multiple-choice quiz with score tracking | Beginner |
-| 03 | [Weather Tracker](./0003_Weather-tracker) | Fetches and displays live weather data using an API | Intermediate |
-| 04 | [Snake Game](./0004_Snake%20Game) | Classic Snake game built on HTML5 Canvas | Intermediate |
-| 05 | [Kanban Board](./0005_Kanban%20Board) | Drag-and-drop task board with To Do / In Progress / Done columns | Intermediate |
-| 06 | [Food Delivery](./0006_Food%20Delivery) | Food ordering UI with cart and menu — live at [aromaavenue.vercel.app](https://aromaavenue.vercel.app) | Advanced |
-| 07 | [Shopping](./0007_Shopping) | E-commerce shopping interface with product listing and cart | Advanced |
+| 0001 | [To-Do List](./0001_To-Do%20List) | Task manager with add, complete, and delete functionality | Beginner |
+| 0002 | [Quiz App](./0002_Quiz-App) | Interactive multiple-choice quiz with score tracking | Beginner |
+| 0003 | [Weather Tracker](./0003_Weather-tracker) | Fetches and displays live weather data using an API | Intermediate |
+| 0004 | [Snake Game](./0004_Snake%20Game) | Classic Snake game built on HTML5 Canvas | Intermediate |
+| 0005 | [Kanban Board](./0005_Kanban%20Board) | Drag-and-drop task board with To Do / In Progress / Done columns | Intermediate |
+| 0006 | [Food Delivery](./0006_Food%20Delivery) | Food ordering UI with cart and menu — live at [aromaavenue.vercel.app](https://aromaavenue.vercel.app) | Advanced |
+| 0007 | [Shopping](./0007_Shopping) | E-commerce shopping interface with product listing and cart | Advanced |
 
 ---
 
