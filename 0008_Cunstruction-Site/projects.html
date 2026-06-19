@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | SteelRise Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .page-hero {
+            min-height: 45vh;
+            background: var(--black);
+            display: flex;
+            align-items: flex-end;
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/projects-bg.jpg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .page-hero-bg-text {
+            position: absolute;
+            right: -2%;
+            bottom: -10%;
+            font-family: var(--font-display);
+            font-size: 13rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-cond);
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--yellow);
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .page-title span {
+            color: var(--yellow);
+        }
+
+        .projects-section {
+            padding: 8rem 0;
+            background: var(--dark);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            font-family: var(--font-cond);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.6rem 1.4rem;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--yellow);
+            color: var(--black);
+            border-color: var(--yellow);
+        }
+
+        .projects-masonry {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .proj-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--dark-2);
+        }
+
+        .proj-card.tall {
+            grid-row: span 2;
+        }
+
+        .proj-img {
+            width: 100%;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .proj-card.tall .proj-img {
+            height: 540px;
+        }
+
+        .proj-card:hover .proj-img {
+            transform: scale(1.06);
+        }
+
+        .proj-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, transparent 55%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.8rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .proj-card:hover .proj-overlay {
+            opacity: 1;
+        }
+
+        .proj-cat {
+            font-family: var(--font-cond);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 0.3rem;
+        }
+
+        .proj-name {
+            font-family: var(--font-cond);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .proj-meta {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .proj-arrow {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 36px;
+            height: 36px;
+            background: var(--yellow);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: var(--transition);
+        }
+
+        .proj-card:hover .proj-arrow {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media(max-width:768px) {
+            .projects-masonry {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .proj-card.tall {
+                grid-row: span 1
+            }
+
+            .proj-card.tall .proj-img {
+                height: 260px
+            }
+        }
+
+        @media(max-width:480px) {
+            .projects-masonry {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon">SR</div>
+                    <div class="logo-text">Steel<span>Rise</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+                </ul>
+                <button class="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fas fa-times"></i></button>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a
+            href="projects.html">Projects</a><a href="contact.html">Get a Quote</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="page-hero-bg-text">PROJECTS</div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb"><a href="index.html">Home</a><i
+                        class="fas fa-chevron-right"></i><span>Projects</span></div>
+                <h1 class="page-title">Our <span>Work</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">850+ Projects <span>Delivered</span></h2>
+            <div class="filter-tabs">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Residential</button>
+                <button class="filter-btn">Commercial</button>
+                <button class="filter-btn">Industrial</button>
+                <button class="filter-btn">Infrastructure</button>
+            </div>
+            <div class="projects-masonry">
+                <div class="proj-card tall">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🏢</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Commercial</div>
+                        <div class="proj-name">Chandigarh Business Tower</div>
+                        <div class="proj-meta">2023 · ₹12 Crore · Chandigarh</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#1a2a1a,#0f3460)">🏠</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Residential</div>
+                        <div class="proj-name">Golden Valley Villas</div>
+                        <div class="proj-meta">2023 · ₹8 Crore · Ludhiana</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#2a1a1a,#1a0a0a)">🏨</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Hospitality</div>
+                        <div class="proj-name">Amritsar Grand Hotel</div>
+                        <div class="proj-meta">2022 · ₹18 Crore · Amritsar</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">🏭</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Industrial</div>
+                        <div class="proj-name">Ludhiana Steel Factory</div>
+                        <div class="proj-meta">2022 · ₹25 Crore · Ludhiana</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#1a2a2a,#0a2a2a)">🌉</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Infrastructure</div>
+                        <div class="proj-name">Punjab Highway Bridge</div>
+                        <div class="proj-meta">2021 · ₹50 Crore · Punjab</div>
+                    </div>
+                </div>
+                <div class="proj-card tall">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#2a2a1a,#3a2a0a)">🏫</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Institutional</div>
+                        <div class="proj-name">Punjab Public School</div>
+                        <div class="proj-meta">2021 · ₹6 Crore · Patiala</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#1a1a1a,#2a1a2a)">🏪</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Commercial</div>
+                        <div class="proj-name">Mohali Shopping Mall</div>
+                        <div class="proj-meta">2020 · ₹30 Crore · Mohali</div>
+                    </div>
+                </div>
+                <div class="proj-card">
+                    <div class="proj-img" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">🏗️</div>
+                    <div class="proj-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="proj-overlay">
+                        <div class="proj-cat">Residential</div>
+                        <div class="proj-name">Jalandhar Township</div>
+                        <div class="proj-meta">2020 · ₹40 Crore · Jalandhar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="num"><span class="counter" data-target="850">0</span>+</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num"><span class="counter" data-target="25">0</span>+</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num">₹<span class="counter" data-target="500">0</span>Cr+</div>
+                    <div class="label">Projects Value</div>
+                </div>
+                <div class="stat-box">
+                    <div class="num"><span class="counter" data-target="98">0</span>%</div>
+                    <div class="label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">YOUR PROJECT COULD BE NEXT</h2>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-dark"><i class="fas fa-arrow-right"></i> Start Your Project</a>
+                    <a href="services.html" class="btn-outline" style="border-color:rgba(0,0,0,0.3);color:#000;"><i
+                            class="fas fa-list"></i> Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">SR</div>
+                        <div class="logo-text">Steel<span>Rise</span></div>
+                    </div>
+                    <p class="footer-desc">Building Punjab's future with steel, concrete, and commitment.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Industrial</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Renovation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Industrial Area, Ludhiana,
+                            Punjab</span></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><span>+91 98765 43210</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>info@steelrise.in</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>SteelRise Construction</span>. All rights reserved.</p>
+                <p>Made with ❤️ in Punjab, India</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        // Filter tabs
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SteelRise Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .page-hero {
+            min-height: 45vh;
+            background: var(--black);
+            display: flex;
+            align-items: flex-end;
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/about-bg.jpg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .page-hero-bg-text {
+            position: absolute;
+            right: -2%;
+            bottom: -10%;
+            font-family: var(--font-display);
+            font-size: 18rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-cond);
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--yellow);
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .page-title span {
+            color: var(--yellow);
+        }
+
+        .story-section {
+            padding: 8rem 0;
+            background: var(--dark);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .story-img {
+            position: relative;
+        }
+
+        .story-img-placeholder {
+            width: 100%;
+            height: 520px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: rgba(245, 197, 24, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-img-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(245, 197, 24, 0.03) 20px, rgba(245, 197, 24, 0.03) 21px);
+        }
+
+        .story-year-badge {
+            position: absolute;
+            top: -1.5rem;
+            right: -1.5rem;
+            width: 120px;
+            height: 120px;
+            background: var(--yellow);
+            color: var(--black);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .story-year-badge .year {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .story-year-badge .since {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .story-accent-box {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: var(--dark-2);
+            border: 1px solid var(--border);
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .story-accent-box i {
+            font-size: 1.8rem;
+            color: var(--yellow);
+        }
+
+        .story-accent-box strong {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--white);
+            display: block;
+            line-height: 1;
+        }
+
+        .story-accent-box span {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .story-text p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+        }
+
+        .story-text p strong {
+            color: var(--white);
+        }
+
+        .values-section {
+            padding: 8rem 0;
+            background: var(--black);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: var(--dark);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--yellow);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .value-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover {
+            background: var(--dark-2);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(245, 197, 24, 0.1);
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .value-card h3 {
+            font-family: var(--font-cond);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .team-section {
+            padding: 8rem 0;
+            background: var(--dark);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .team-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            transition: transform 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            background: var(--dark-2);
+            padding: 1.2rem 1.5rem;
+            border-bottom: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-info {
+            border-color: var(--yellow);
+        }
+
+        .team-name {
+            font-family: var(--font-cond);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.2rem;
+        }
+
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .team-social {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-social {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .team-social a {
+            width: 32px;
+            height: 32px;
+            background: var(--yellow);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .timeline-section {
+            padding: 8rem 0;
+            background: var(--black);
+        }
+
+        .timeline {
+            position: relative;
+            margin-top: 4rem;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--yellow), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.4rem;
+            width: 14px;
+            height: 14px;
+            background: var(--yellow);
+            border-radius: 50%;
+            border: 3px solid var(--black);
+            box-shadow: 0 0 0 3px var(--yellow);
+        }
+
+        .timeline-year {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--yellow);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-title {
+            font-family: var(--font-cond);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        @media(max-width:1024px) {
+            .story-grid {
+                grid-template-columns: 1fr
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:768px) {
+            .values-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon">SR</div>
+                    <div class="logo-text">Steel<span>Rise</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+                </ul>
+                <button class="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fas fa-times"></i></button>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a
+            href="projects.html">Projects</a><a href="contact.html">Get a Quote</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="page-hero-bg-text">ABOUT</div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>About
+                        Us</span></div>
+                <h1 class="page-title">Who We <span>Are</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-img">
+                    <div class="story-img-placeholder">🏗️</div>
+                    <div class="story-year-badge">
+                        <div class="year">25+</div>
+                        <div class="since">Years</div>
+                    </div>
+                    <div class="story-accent-box"><i class="fas fa-trophy"></i>
+                        <div><strong>15+</strong><span>Awards Won</span></div>
+                    </div>
+                </div>
+                <div class="story-text">
+                    <div class="section-label">Our Story</div>
+                    <h2 class="section-title">Built On <span>Trust</span> & Steel</h2>
+                    <p>SteelRise Construction was founded in <strong>2000 in Ludhiana, Punjab</strong> by a team of
+                        passionate engineers with one vision — to build structures that stand the test of time.</p>
+                    <p>What started as a small team of 10 dedicated professionals has grown into <strong>Punjab's most
+                            trusted construction company</strong> with over 120 skilled team members, engineers,
+                        architects, and project managers.</p>
+                    <p>Over 25 years, we've delivered <strong>850+ projects</strong> across residential, commercial, and
+                        industrial sectors — from luxury villas in Chandigarh to industrial plants in Ludhiana.</p>
+                    <p>Our commitment is simple: <strong>quality over everything</strong>, delivered on time and within
+                        budget.</p>
+                    <br><a href="contact.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Work With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-label">What Drives Us</div>
+            <h2 class="section-title">Our Core <span>Values</span></h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Quality First</h3>
+                    <p>We never compromise on material quality or craftsmanship. Every nail, beam, and brick meets our
+                        strict standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Integrity</h3>
+                    <p>Transparent pricing, honest timelines, and clear communication. We say what we do and do what we
+                        say.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation</h3>
+                    <p>We embrace modern construction technologies and sustainable building practices for better, faster
+                        results.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-users"></i></div>
+                    <h3>People First</h3>
+                    <p>Our clients, workers, and community matter. We build relationships as strong as the structures we
+                        create.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-label">The People Behind It</div>
+            <h2 class="section-title">Meet Our <span>Team</span></h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img" style="background:linear-gradient(135deg,#1a1a2e,#0f3460)">👷</div>
+                    <div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a></div>
+                    <div class="team-info">
+                        <div class="team-name">Harjinder Singh</div>
+                        <div class="team-role">CEO & Founder</div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img" style="background:linear-gradient(135deg,#1a2a1a,#163416)">👩‍💼</div>
+                    <div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a></div>
+                    <div class="team-info">
+                        <div class="team-name">Preet Kaur</div>
+                        <div class="team-role">Chief Architect</div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img" style="background:linear-gradient(135deg,#2a1a1a,#3a0a0a)">👨‍🔧</div>
+                    <div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a></div>
+                    <div class="team-info">
+                        <div class="team-name">Ranjit Sharma</div>
+                        <div class="team-role">Head Engineer</div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img" style="background:linear-gradient(135deg,#1a1a2a,#2a0a3a)">👨‍💻</div>
+                    <div class="team-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i
+                                class="fab fa-instagram"></i></a></div>
+                    <div class="team-info">
+                        <div class="team-name">Vikram Malhotra</div>
+                        <div class="team-role">Project Manager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-label">Our Journey</div>
+            <h2 class="section-title">25 Years of <span>Excellence</span></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <div class="timeline-title">The Beginning</div>
+                    <div class="timeline-desc">Founded in Ludhiana by Harjinder Singh with a team of 10 engineers and a
+                        dream to build Punjab's finest structures.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-title">First Major Commercial Project</div>
+                    <div class="timeline-desc">Completed our first large-scale commercial complex in Ludhiana — a
+                        5-storey office building that put SteelRise on the map.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-title">Expansion to Chandigarh</div>
+                    <div class="timeline-desc">Opened our second office in Chandigarh and took on our first government
+                        infrastructure contract worth ₹50 crore.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-title">100+ Projects Milestone</div>
+                    <div class="timeline-desc">Crossed 100 completed projects and received the Punjab Excellence in
+                        Construction Award.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-title">Going Green</div>
+                    <div class="timeline-desc">Adopted sustainable construction practices and achieved ISO 14001
+                        environmental certification.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title">850+ Projects & Growing</div>
+                    <div class="timeline-desc">Today we stand with 850+ completed projects, 120+ team members, and a
+                        vision to build across all of North India.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">READY TO BUILD SOMETHING GREAT?</h2>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-dark"><i class="fas fa-arrow-right"></i> Get Free Quote</a>
+                    <a href="projects.html" class="btn-outline" style="border-color:rgba(0,0,0,0.3);color:#000;"><i
+                            class="fas fa-eye"></i> View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">SR</div>
+                        <div class="logo-text">Steel<span>Rise</span></div>
+                    </div>
+                    <p class="footer-desc">Building Punjab's future with steel, concrete, and commitment. Your trusted
+                        construction partner since 2000.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Industrial</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Renovation</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Industrial Area, Ludhiana,
+                            Punjab</span></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><span>+91 98765 43210</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>info@steelrise.in</span></div>
+                    <div class="contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>SteelRise Construction</span>. All rights reserved.</p>
+                <p>Made with ❤️ in Punjab, India</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>

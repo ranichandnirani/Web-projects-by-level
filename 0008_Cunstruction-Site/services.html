@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SteelRise Construction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .page-hero {
+            min-height: 45vh;
+            background: var(--black);
+            display: flex;
+            align-items: flex-end;
+            padding: 8rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/services-bg.jpg') center/cover no-repeat;
+            opacity: 0.15;
+        }
+
+        .page-hero-bg-text {
+            position: absolute;
+            right: -2%;
+            bottom: -10%;
+            font-family: var(--font-display);
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-cond);
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: var(--yellow);
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .page-title span {
+            color: var(--yellow);
+        }
+
+        .services-full {
+            padding: 8rem 0;
+            background: var(--dark);
+        }
+
+        .services-full-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            margin-top: 4rem;
+        }
+
+        .service-full-card {
+            background: var(--dark);
+            padding: 3rem;
+            display: flex;
+            gap: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-full-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0;
+            background: var(--yellow);
+            transition: height 0.4s ease;
+        }
+
+        .service-full-card:hover::after {
+            height: 100%;
+        }
+
+        .service-full-card:hover {
+            background: var(--dark-2);
+        }
+
+        .service-full-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(245, 197, 24, 0.1);
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .service-full-card:hover .service-full-icon {
+            background: var(--yellow);
+            color: var(--black);
+        }
+
+        .service-full-body h3 {
+            font-family: var(--font-cond);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-full-body p {
+            font-size: 0.88rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .service-list li {
+            font-size: 0.82rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--yellow);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .process-section {
+            padding: 8rem 0;
+            background: var(--black);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(to right, var(--yellow), rgba(245, 197, 24, 0.1));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 64px;
+            height: 64px;
+            background: var(--yellow);
+            color: var(--black);
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .step-title {
+            font-family: var(--font-cond);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-desc {
+            font-size: 0.8rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .why-section {
+            padding: 8rem 0;
+            background: var(--dark);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .why-img {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .why-item:hover {
+            border-color: rgba(245, 197, 24, 0.3);
+            background: rgba(245, 197, 24, 0.03);
+        }
+
+        .why-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--yellow);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .why-item h4 {
+            font-family: var(--font-cond);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .why-item p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        @media(max-width:1024px) {
+            .services-full-grid {
+                grid-template-columns: 1fr
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:768px) {
+            .process-steps {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .process-steps::before {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon">SR</div>
+                    <div class="logo-text">Steel<span>Rise</span></div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
+                </ul>
+                <button class="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close"><i class="fas fa-times"></i></button>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a
+            href="projects.html">Projects</a><a href="contact.html">Get a Quote</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="page-hero-bg-text">SERVICES</div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb"><a href="index.html">Home</a><i
+                        class="fas fa-chevron-right"></i><span>Services</span></div>
+                <h1 class="page-title">What We <span>Build</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-full">
+        <div class="container">
+            <div class="section-label">Our Services</div>
+            <h2 class="section-title">Everything We <span>Offer</span></h2>
+            <div class="services-full-grid">
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-home"></i></div>
+                    <div class="service-full-body">
+                        <h3>Residential Construction</h3>
+                        <p>Custom homes, villas, duplexes, and apartments built with premium materials and finest
+                            craftsmanship for lasting comfort.</p>
+                        <ul class="service-list">
+                            <li>Custom Villas & Bungalows</li>
+                            <li>Apartment Complexes</li>
+                            <li>Duplex & Row Houses</li>
+                            <li>Farmhouses</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-city"></i></div>
+                    <div class="service-full-body">
+                        <h3>Commercial Projects</h3>
+                        <p>Office towers, shopping centers, showrooms, and commercial complexes built for functionality,
+                            aesthetics, and longevity.</p>
+                        <ul class="service-list">
+                            <li>Office Buildings</li>
+                            <li>Shopping Complexes</li>
+                            <li>Showrooms & Retail</li>
+                            <li>Hotels & Hospitality</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-industry"></i></div>
+                    <div class="service-full-body">
+                        <h3>Industrial Construction</h3>
+                        <p>Factories, warehouses, and industrial facilities engineered for safety, efficiency, and
+                            maximum operational output.</p>
+                        <ul class="service-list">
+                            <li>Manufacturing Plants</li>
+                            <li>Warehouses & Godowns</li>
+                            <li>Cold Storage Facilities</li>
+                            <li>Industrial Sheds</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-paint-roller"></i></div>
+                    <div class="service-full-body">
+                        <h3>Renovation & Remodeling</h3>
+                        <p>Transform existing spaces with modern upgrades, structural improvements, and complete
+                            interior redesigns.</p>
+                        <ul class="service-list">
+                            <li>Home Renovation</li>
+                            <li>Office Remodeling</li>
+                            <li>Structural Repairs</li>
+                            <li>Interior Upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <div class="service-full-body">
+                        <h3>Architecture & Design</h3>
+                        <p>Complete architectural planning and interior design from concept to blueprint to final
+                            execution.</p>
+                        <ul class="service-list">
+                            <li>Architectural Planning</li>
+                            <li>Interior Design</li>
+                            <li>3D Visualization</li>
+                            <li>Vastu Compliant Design</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-full-card">
+                    <div class="service-full-icon"><i class="fas fa-hard-hat"></i></div>
+                    <div class="service-full-body">
+                        <h3>Project Management</h3>
+                        <p>End-to-end project supervision ensuring timelines, budgets, quality standards, and safety are
+                            always maintained.</p>
+                        <ul class="service-list">
+                            <li>Timeline Management</li>
+                            <li>Budget Control</li>
+                            <li>Quality Inspection</li>
+                            <li>Safety Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="section-label">How We Work</div>
+            <h2 class="section-title">Our Simple <span>Process</span></h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-title">Consultation</div>
+                    <div class="step-desc">Free meeting to understand your vision, needs, and budget</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Planning</div>
+                    <div class="step-desc">Architectural design, blueprints, and detailed project plan</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-title">Approval</div>
+                    <div class="step-desc">Client sign-off on design, materials, timeline and costs</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <div class="step-title">Construction</div>
+                    <div class="step-desc">Expert team builds with daily progress updates to client</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">05</div>
+                    <div class="step-title">Handover</div>
+                    <div class="step-desc">Final inspection, quality check, and key handover</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="container">
+            <div class="section-label">Why Choose Us</div>
+            <h2 class="section-title">The SteelRise <span>Difference</span></h2>
+            <div class="why-grid">
+                <div class="why-img">🏆</div>
+                <div class="why-list">
+                    <div class="why-item">
+                        <div class="why-icon"><i class="fas fa-medal"></i></div>
+                        <div>
+                            <h4>25+ Years Experience</h4>
+                            <p>Decades of expertise across all types of construction projects in Punjab and beyond.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>On-Time Delivery</h4>
+                            <p>98% of our projects are delivered on or before the promised date — guaranteed.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
+                        <div>
+                            <h4>Transparent Pricing</h4>
+                            <p>No hidden charges, no surprises. Clear quotes upfront with detailed cost breakdowns.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h4>24/7 Support</h4>
+                            <p>Our project managers are always available to answer questions and provide updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">LET'S START YOUR PROJECT TODAY</h2>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-dark"><i class="fas fa-arrow-right"></i> Get Free Quote</a>
+                    <a href="tel:+919876543210" class="btn-outline" style="border-color:rgba(0,0,0,0.3);color:#000;"><i
+                            class="fas fa-phone"></i> Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">SR</div>
+                        <div class="logo-text">Steel<span>Rise</span></div>
+                    </div>
+                    <p class="footer-desc">Building Punjab's future with steel, concrete, and commitment. Your trusted
+                        construction partner since 2000.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Residential</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Commercial</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Industrial</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Renovation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Industrial Area, Ludhiana,
+                            Punjab</span></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><span>+91 98765 43210</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>info@steelrise.in</span></div>
+                    <div class="contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 9:00 AM – 6:00 PM</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 <span>SteelRise Construction</span>. All rights reserved.</p>
+                <p>Made with ❤️ in Punjab, India</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
