@@ -2,9 +2,9 @@
 
 A curated collection of frontend web projects built with **HTML**, **CSS**, and **JavaScript** — organized by complexity level. Each project focuses on real-world UI patterns, DOM manipulation, and JavaScript logic.
 
-![HTML](https://img.shields.io/badge/HTML-54.9%25-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-25.8%25-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-19.3%25-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 ---
 
@@ -19,6 +19,7 @@ A curated collection of frontend web projects built with **HTML**, **CSS**, and 
 | 0005 | [Kanban Board](./0005_Kanban%20Board) | Drag-and-drop task board with To Do / In Progress / Done columns | Intermediate |
 | 0006 | [Food Delivery](./0006_Food%20Delivery) | Food ordering UI with cart and menu — live at [aromaavenue.vercel.app](https://aromaavenue.vercel.app) | Advanced |
 | 0007 | [Shopping](./0007_Shopping) | E-commerce shopping interface with product listing and cart | Advanced |
+| 0008 | [Constructions-site](./0007_Cunstruction-site) | --- | Advanced |
 
 ---
 
