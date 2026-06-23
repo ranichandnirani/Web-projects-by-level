@@ -679,8 +679,12 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
 }
 
-.service-card:hover::before { transform: scaleX(1); }
-.service-card:hover { background: var(--dark-2); transform: translateY(-4px); }
+.service-card:hover::before { 
+    transform: scaleX(1); 
+}
+.service-card:hover { 
+    background: var(--dark-2); transform: translateY(-4px); 
+}
 
 .service-num {
     font-family: var(--font-display);
@@ -691,7 +695,9 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
 }
 
-.service-card:hover .service-num { color: rgba(245,197,24,0.15); }
+.service-card:hover .service-num { 
+    color: rgba(245,197,24,0.15); 
+}
 
 .service-icon {
     width: 50px;
@@ -739,7 +745,9 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
 }
 
-.service-link:hover { gap: 1rem; }
+.service-link:hover { 
+    gap: 1rem; 
+}
 
 /* ===========================
    STATS / COUNTER
@@ -821,11 +829,21 @@ img { max-width: 100%; display: block; }
     transition: transform 0.5s ease;
 }
 
-.p1 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
-.p2 { background: linear-gradient(135deg, #1a2a1a, #0f3460); }
-.p3 { background: linear-gradient(135deg, #2a1a1a, #1a0a0a); }
-.p4 { background: linear-gradient(135deg, #1a1a2a, #2a1a3a); }
-.p5 { background: linear-gradient(135deg, #1a2a2a, #0a2a2a); }
+.p1 { 
+    background: linear-gradient(135deg, #1a1a2e, #16213e); 
+}
+.p2 { 
+    background: linear-gradient(135deg, #1a2a1a, #0f3460); 
+}
+.p3 { 
+    background: linear-gradient(135deg, #2a1a1a, #1a0a0a); 
+}
+.p4 { 
+    background: linear-gradient(135deg, #1a1a2a, #2a1a3a); 
+}
+.p5 { 
+    background: linear-gradient(135deg, #1a2a2a, #0a2a2a); 
+}
 
 .project-card:hover .project-img-placeholder {
     transform: scale(1.05);
@@ -843,7 +861,9 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
 }
 
-.project-card:hover .project-overlay { opacity: 1; }
+.project-card:hover .project-overlay { 
+    opacity: 1; 
+}
 
 .project-cat {
     font-family: var(--font-cond);
@@ -870,7 +890,9 @@ img { max-width: 100%; display: block; }
     background: var(--black);
 }
 
-.testimonials-header { margin-bottom: 4rem; }
+.testimonials-header { 
+    margin-bottom: 4rem; 
+}
 
 .testimonials-grid {
     display: grid;
@@ -988,7 +1010,11 @@ img { max-width: 100%; display: block; }
     max-width: 550px;
 }
 
-.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.cta-actions { 
+    display: flex; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
 
 .btn-dark {
     display: inline-flex;
