@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create a Trendova account.">
+    <title>Create Account | Trendova</title>
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-prefix.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+    <main class="auth-layout">
+        <a class="auth-back-link" href="./index.html">
+            <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+            Back to shopping
+        </a>
+
+        <section class="auth-card" aria-labelledby="auth-title">
+            <a class="auth-logo" href="./index.html" aria-label="Trendova home">
+                <img src="./assets/images/logo/trendova-logo.svg" alt="Trendova">
+            </a>
+
+            <div class="auth-heading">
+                <p class="auth-eyebrow">JOIN TRENDOVA</p>
+                <h1 id="auth-title">Create your account</h1>
+                <p>Save your favorite finds and make every visit yours.</p>
+            </div>
+
+            <form class="auth-form" data-auth-form data-signup-form novalidate>
+                <label for="signup-name">Full name</label>
+                <input id="signup-name" name="name" type="text" autocomplete="name"
+                    placeholder="Your name" required minlength="2">
+
+                <label for="signup-email">Email address</label>
+                <input id="signup-email" name="email" type="email" autocomplete="email"
+                    placeholder="you@example.com" required>
+
+                <label for="signup-password">Password</label>
+                <input id="signup-password" name="password" type="password" autocomplete="new-password"
+                    placeholder="At least 8 characters" required minlength="8">
+
+                <label for="signup-confirm-password">Confirm password</label>
+                <input id="signup-confirm-password" name="confirm-password" type="password"
+                    autocomplete="new-password" placeholder="Enter your password again" required minlength="8">
+
+                <label class="auth-checkbox auth-terms">
+                    <input type="checkbox" name="terms" required>
+                    <span>I agree to the terms and conditions.</span>
+                </label>
+
+                <button class="auth-submit" type="submit">Create account</button>
+                <p class="auth-feedback" data-auth-feedback aria-live="polite" hidden></p>
+            </form>
+
+            <p class="auth-switch">
+                Already have an account? <a href="./signin.html">Sign in</a>
+            </p>
+            <p class="auth-demo-note">Demo storefront: account creation is not connected to a server.</p>
+        </section>
+    </main>
+
+    <script src="./assets/js/auth.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

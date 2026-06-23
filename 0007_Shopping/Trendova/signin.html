@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your Trendova account.">
+    <title>Sign In | Trendova</title>
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-prefix.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+    <main class="auth-layout">
+        <a class="auth-back-link" href="./index.html">
+            <ion-icon name="arrow-back-outline" aria-hidden="true"></ion-icon>
+            Back to shopping
+        </a>
+
+        <section class="auth-card" aria-labelledby="auth-title">
+            <a class="auth-logo" href="./index.html" aria-label="Trendova home">
+                <img src="./assets/images/logo/trendova-logo.svg" alt="Trendova">
+            </a>
+
+            <div class="auth-heading">
+                <p class="auth-eyebrow">WELCOME BACK</p>
+                <h1 id="auth-title">Sign in to Trendova</h1>
+                <p>Access your wishlist and keep your shopping in one place.</p>
+            </div>
+
+            <form class="auth-form" data-auth-form novalidate>
+                <label for="signin-email">Email address</label>
+                <input id="signin-email" name="email" type="email" autocomplete="email"
+                    placeholder="you@example.com" required>
+
+                <label for="signin-password">Password</label>
+                <input id="signin-password" name="password" type="password" autocomplete="current-password"
+                    placeholder="Enter your password" required>
+
+                <div class="auth-form-options">
+                    <label class="auth-checkbox">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <span class="auth-muted">Forgot password?</span>
+                </div>
+
+                <button class="auth-submit" type="submit">Sign in</button>
+                <p class="auth-feedback" data-auth-feedback aria-live="polite" hidden></p>
+            </form>
+
+            <p class="auth-switch">
+                Don't have an account? <a href="./signup.html">Create an account</a>
+            </p>
+            <p class="auth-demo-note">Demo storefront: account sign-in is not connected to a server.</p>
+        </section>
+    </main>
+
+    <script src="./assets/js/auth.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
