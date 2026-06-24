@@ -27,7 +27,6 @@
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Responsive Design](#-responsive-design)
-- [Screenshots](#-screenshots)
 - [What I Learned](#-what-i-learned)
 - [Future Improvements](#-future-improvements)
 - [Contributing](#-contributing)
@@ -63,6 +62,8 @@ The goal of this project is to practise building a real-world, multi-section e-c
 - **Mobile bottom navigation bar** for quick access on small screens
 
 ### 🛒 Shopping Experience
+- **Working product search, cart and wishlist** with live filtering, quantity controls, subtotal calculation and browser-local persistence
+- **Sign-in and sign-up pages** linked from the account icon, with client-side form validation (demo UI; no backend authentication)
 - **Hero banner slider** with promotional offers (women's fashion sale, modern sunglasses, summer sale)
 - **Category showcase** with icons and product counts (Dress & Frock, Winter Wear, Glasses & Lens, Shorts & Jeans, T-Shirts, Jacket, Watch, Hat & Caps)
 - **Sidebar category list** with expandable sub-categories and stock counts
